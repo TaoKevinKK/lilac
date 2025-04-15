@@ -114,6 +114,7 @@ def process_source(
   task_id: Optional[TaskId] = None,
 ) -> str:
   """Process a source."""
+  # 数据保存.
   output_dir = get_dataset_output_dir(project_dir, config.namespace, config.name)
 
   config.source.setup()

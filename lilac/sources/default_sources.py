@@ -10,7 +10,7 @@ from .llama_index_docs_source import LlamaIndexDocsSource
 from .pandas_source import PandasSource
 from .parquet_source import ParquetSource
 from .sqlite_source import SQLiteSource
-
+from .iceberg_source import IcebergSource
 
 def register_default_sources() -> None:
   """Register all the default sources."""
@@ -24,3 +24,4 @@ def register_default_sources() -> None:
   register_source(SQLiteSource)
   register_source(GithubSource)
   register_source(LlamaIndexDocsSource)
+  register_source(IcebergSource)

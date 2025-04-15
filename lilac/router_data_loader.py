@@ -82,8 +82,9 @@ async def load(
   source_cls = get_source_cls(source_name)
   if source_cls is None:
     raise ValueError(f'Unknown source: {source_name}')
+  # Source子类实例, 比如jsonSource.
   source = source_cls(**options.config)
-
+  # 每个source获取一个线程.
   task_id = get_task_manager().task_id(
     name=f'[{options.namespace}/{options.dataset_name}] Load dataset',
     type=TaskType.DATASET_LOAD,
